@@ -1,0 +1,6 @@
+soal.txt
+node_modules
+Dockerfile
+.dockerignore
+.git
+.gitignore
