@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sejutacita
+spec:
+  selector:
+    matchLabels:
+      app: sejutacita
+  template:
+    metadata:
+      labels:
+        app: sejutacita
+    spec:
+      containers:
+        - name: sejutacita
+          image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+          ports:
+            - containerPort: 3000
+              protocol: TCP

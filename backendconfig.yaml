@@ -1,0 +1,11 @@
+---  
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: sejutacita
+spec:
+  healthCheck:
+    port: 3000
+    type: HTTP
+    requestPath: /
+    checkIntervalSec: 15
