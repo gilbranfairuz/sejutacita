@@ -1,3 +1,5 @@
+### Backend Service
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -12,4 +14,20 @@ spec:
     name: sejutacita
   selector:
     app: sejutacita
+  type: LoadBalancer
+
+
+### Mongodb Service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+spec:
+  selector:
+    app: mongodb
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
   type: LoadBalancer

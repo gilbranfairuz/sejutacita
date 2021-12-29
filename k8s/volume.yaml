@@ -1,0 +1,12 @@
+### sejutacita Volume
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sejutacita-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

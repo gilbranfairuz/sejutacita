@@ -1,0 +1,64 @@
+### Backend Deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sejutacita
+spec:
+  selector:
+    matchLabels:
+      app: sejutacita
+  template:
+    metadata:
+      labels:
+        app: sejutacita
+    spec:
+      containers:
+        - name: sejutacita
+          image: asia-southeast2-docker.pkg.dev/percobaan-gke/sejutacita/sejutacita:latest
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+
+
+### Mongodb Deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  labels:
+    app: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:5.0
+          ports:
+            - containerPort: 27017
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: sejutacita-secret
+                  key: mongo-root-username
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sejutacita-secret
+                  key: mongo-root-password
+          volumeMounts:
+            - name: sejutacita-pvc
+              mountPath: /data/mongo
+      volumes:
+        - name: sejutacita-pvc
+          persistentVolumeClaim:
+            claimName: sejutacita-pvc
