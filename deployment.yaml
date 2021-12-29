@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sejutacita
-          image: ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GKE_PROJECT }}/${{ secrets.REPOSITORY}}/${{ secrets.IMAGE}}:${{ secrets.TAG}}
+          image: asia-southeast2-docker.pkg.dev/percobaan-gke/sejutacita/sejutacita:latest
           ports:
             - containerPort: 3000
               protocol: TCP
