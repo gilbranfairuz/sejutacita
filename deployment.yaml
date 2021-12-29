@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sejutacita
-          image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+          image: ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GKE_PROJECT }}/${{ secrets.REPOSITORY}}/${{ secrets.IMAGE}}:${{ secrets.TAG}}
           ports:
             - containerPort: 3000
               protocol: TCP
