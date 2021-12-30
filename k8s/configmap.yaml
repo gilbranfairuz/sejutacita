@@ -4,41 +4,8 @@ kind: ConfigMap
 metadata:
     name: sejutacita-config-map
 data:
-    NODE_ENV: "development"
-    HOST: "https://staging-billingsystem.gramedia.com"
     # Port number
     PORT: "3000"
 
     # URL of the Mongo DB
-    # MONGODB_URL: "mongodb+srv://imam:Imamth01@cluster0.bwc5h.mongodb.net/gramedia-bill?retryWrites=true&w=majority"
-    MONGODB_URL: "mongodb://billing-system-user:billingsystem02@34.101.233.81:27017/billing-system-staging?retryWrites=true&w=majority"
-    # JWT
-    # JWT secret key
-    JWT_SECRET: "thisisasamplesecret"
-    # Number of minutes after which an access token expires
-    JWT_ACCESS_EXPIRATION_MINUTES: "30"
-    # Number of days after which a refresh token expires
-    JWT_REFRESH_EXPIRATION_DAYS: "30"
-    # Number of minutes after which a reset password token expires
-    JWT_RESET_PASSWORD_EXPIRATION_MINUTES: "10"
-    # Number of minutes after which a verify email token expires
-    JWT_VERIFY_EMAIL_EXPIRATION_MINUTES: "10"
-
-    # SMTP configuration options for the email service
-    # For testing, you can use a fake SMTP service like Ethereal: https://ethereal.email/create
-    SMTP_HOST: "in-v3.mailjet.com"
-    SMTP_PORT: "587"
-    SMTP_USERNAME: "a753da70e5f84d1457710e31b7e99f44"
-    SMTP_PASSWORD: "745fe8a07351d9c188bb6087af830e10"
-    EMAIL_FROM: "billing.system.example@gmail.com"
-
-    #URL and auth for Sepulsa API
-    SEPULSA_USERNAME: "gramedia"
-    SEPULSA_PASSWORD: "IGxB9fhNM1yjpzP8W62EiuFV4Ae0U3lt"
-    SEPULSA_URL: "https://horven-api.sumpahpalapa.com/api"
-
-    JWT_EXPIRES_IN: "30"
-
-    JWT_COOKIE_EXPIRES_IN: "1"
-
-    SECRET_KEY: "RAHASIA"
+    MONGODB_URL: "mongodb://34.101.200.188:27017/sejutacita"

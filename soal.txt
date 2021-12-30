@@ -14,3 +14,23 @@ Mohon submit kesini (biasanya orang kirim link Github) paling lambat 31 Desember
 Kami harap SRE jg dapat mengerti pekerjaan minimum di BE, sehingga kami memberikan tes ini. Namun demikian yg akan dinilai tentunya berbeda dgn BE engineers. Di mana bagi BE engineers penilaian yg paling utamanya adalah arstektur aplikasi sedangkan pada SRE ada di proses pembuatan prosedur deployment.
 
 Terima kasih :)
+
+use sejutacita
+
+db.createUser(
+  {
+    user: "sejutacita-user",
+    pwd: "sejutacitauser",
+    roles: [ { role: "readWrite", db: "sejutacita" } ]
+  }
+)
+
+"seed-data": "seed -u 'mongodb://localhost:27017/mydb' --drop-database ./data"
+"seed-data": "seed -u 'mongodb://billing-system-user:billingsystem02@34.101.233.81:27017/billing-system-staging' ./data"
+sed -i 's/localhost:27017/billing-system-user:billingsystem02@34.101.233.81:27017/g' package.json
+sed -i 's/mydb/billing-system-staging/g' package.json
+sed -i 's/--drop-database//g' package.json
+npm run seed-data
+sed -i "s/--drop-collection/--drop-collections/g" package.json
+sed -i "s/billing-system-staging/billing-system-staging'/g" package.json
+npm run seed-data

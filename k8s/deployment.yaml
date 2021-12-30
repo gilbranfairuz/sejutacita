@@ -19,6 +19,17 @@ spec:
           ports:
             - containerPort: 3000
               protocol: TCP
+          env:
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: sejutacita-config-map
+                  key: PORT
+            - name: MONGODB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: sejutacita-config-map
+                  key: MONGODB_URL
 
 
 ### Mongodb Deployment
