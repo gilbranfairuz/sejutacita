@@ -31,7 +31,8 @@ db.createUser(
 [Kubernetes Manifests](https://github.com/gilbranfairuz/sejutacita/tree/main/k8s)
 
 ### Provided API
-
+Methods | Urls | Actions
+--- | --- | ---
 POST | [/api/auth/signup](http://34.101.128.200[/api/auth/signup) | signup new account
 --- | --- | ---
 POST | [/api/auth/signin](http://34.101.128.200[/api/auth/signin) | login an account
