@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: sejutacita
+          imagePullPolicy: Always
           image: asia-southeast2-docker.pkg.dev/percobaan-gke/sejutacita/sejutacita:latest
           ports:
             - containerPort: 3000
