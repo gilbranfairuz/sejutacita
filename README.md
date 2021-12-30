@@ -33,8 +33,8 @@ db.createUser(
 ### Provided API
 Methods | Urls | Actions
 --- | --- | ---
-POST | [/api/auth/signup](http://34.101.128.200[/api/auth/signup) | signup new account
-POST | [/api/auth/signin](http://34.101.128.200[/api/auth/signin) | login an account
+POST | [/api/auth/signup](http://34.101.128.200/api/auth/signup) | signup new account
+POST | [/api/auth/signin](http://34.101.128.200/api/auth/signin) | login an account
 GET | [/api/test/all](http://34.101.128.200/api/test/all) | retrieve public content
 GET | [/api/test/user](http://34.101.128.200/api/test/user) | access User’s content
 GET | [/api/test/mod](http://34.101.128.200/api/test/mod) | access Moderator’s content
