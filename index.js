@@ -21,7 +21,7 @@ const db = require("./app/models");
 const Role = db.role;
 
 db.mongoose
-  .connect(`${ process.env.MONGODB }`, {
+  .connect(`${ process.env.MONGODB_URL }`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
