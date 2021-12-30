@@ -8,5 +8,5 @@ data:
     PORT: "3000"
 
     # URL of the Mongo DB
-    MONGODB_URL: "mongodb://sejutacitauser-user:sejutacitauser@34.101.200.188:27017/sejutacita?retryWrites=true&w=majority"
+    MONGODB_URL: "mongodb://sejutacita-user:sejutacitauser@34.101.200.188:27017/sejutacita?retryWrites=true&w=majority"
     
